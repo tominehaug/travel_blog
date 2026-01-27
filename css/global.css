@@ -1,4 +1,4 @@
-/*buttons*/
+/*styles for buttons*/
 
 button {
   border: none;
@@ -38,4 +38,91 @@ button {
   width: 142px;
   height: 55px;
   font-size: 20px;
+}
+
+/*text-formatting*/
+
+.decorative-title {
+  font-family: "Londrina Solid", sans-serif;
+  letter-spacing: 0.2em;
+  color: #697d3b;
+}
+
+.thumbnail {
+  font-size: 24px;
+}
+
+h1,
+h2 {
+  font-family: "Sofia Sans", sans-serif;
+  font-weight: 700;
+  color: #2f5e86;
+}
+h3,
+h4,
+p,
+.thumbnail {
+  font-family: "Maitree", serif;
+}
+h3,
+p,
+.thumbnail,
+.decorative-title {
+  font-weight: 400;
+}
+h4,
+p {
+  font-size: 20px;
+}
+h1 {
+  font-size: 64px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  h3,
+  h4,
+  p,
+  .thumbnail {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+}
+
+/*styles for forms*/
+
+label {
+  font-family: "Maitree", serif;
+  font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+  max-width: 95vw;
+  width: 500px;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  box-sizing: border-box;
+  border: 1.5px solid #acacac;
+  border-radius: 10px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border: 2.5px solid #2f5e86;
 }
