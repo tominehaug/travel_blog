@@ -1,4 +1,4 @@
-/*styles for layout*/
+/*Styles for layout*/
 
 body {
   margin: 10px;
@@ -31,7 +31,9 @@ body {
   margin-top: 20px;
 }
 
-/*styles for buttons*/
+/*Styles for header*/
+
+/*Styles for buttons*/
 
 button {
   border: none;
@@ -74,7 +76,19 @@ button {
   font-size: 20px;
 }
 
-/*text-formatting*/
+.add-button {
+  font-family: "Maitree", serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: normal;
+  width: 300px;
+  height: 40px;
+  text-transform: capitalize;
+  text-align: left;
+  background-color: transparent;
+}
+
+/*Text-formatting*/
 
 .decorative-title {
   font-family: "Londrina Solid", sans-serif;
@@ -134,13 +148,13 @@ h4 {
   }
 }
 
-/*links*/
+/*Links*/
 
 a {
   all: unset;
 }
 
-/*styles for forms*/
+/*Styles for forms*/
 
 fieldset {
   all: unset;
