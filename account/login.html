@@ -6,17 +6,30 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Maitree:wght@400;600;700&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
     </style>
-    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="../css/global.css" />
   </head>
   <body>
-    <h2>Log in</h2>
-    <form>
-      <label for="username">E-mail</label><br />
-      <input type="text" id="username" name="username" /><br />
-      <label for="pwd">Password</label><br />
-      <input type="password" id="pwd" name="pwd" />
-      <input type="submit" id="signin" name="signin" value="SIGN IN" />
-    </form>
-    <button>SIGN UP</button>
+    <header>
+      <img src="/assets/logo_desktop.png" alt="logo" />
+      <img src="/assets/logo_mobile.png" alt="logo" />
+      <button class="nav-button"></button>
+    </header>
+    <h2 class="center-heading">Log in</h2>
+    <div class="form-container">
+      <form>
+        <label for="username">E-mail</label><br />
+        <input type="email" id="username" name="username" /><br />
+        <label for="pwd">Password</label><br />
+        <input type="password" id="pwd" name="pwd" />
+        <div class="buttons-container">
+          <button type="submit" id="signin" class="primary-button">
+            Sign in
+          </button>
+          <button id="signup" class="secondary-button">
+            <a href="register.html">Sign up</a>
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

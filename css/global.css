@@ -1,3 +1,20 @@
+/*styles for layout*/
+
+body {
+  margin: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-heading {
+  text-align: center;
+}
+
 /*styles for buttons*/
 
 button {
@@ -15,7 +32,8 @@ button {
   cursor: pointer;
 }
 
-.primary-button {
+.primary-button,
+.mobile-nav-button {
   background-color: #697d3b;
   color: #ffffff;
 }
@@ -46,6 +64,7 @@ button {
   font-family: "Londrina Solid", sans-serif;
   letter-spacing: 0.2em;
   color: #697d3b;
+  text-transform: uppercase;
 }
 
 .thumbnail {
@@ -99,17 +118,50 @@ h4 {
   }
 }
 
+/*links*/
+
+a {
+  all: unset;
+}
+
 /*styles for forms*/
+
+fieldset {
+  all: unset;
+  margin-bottom: 10px;
+}
 
 label {
   font-family: "Maitree", serif;
   font-weight: 600;
 }
 
+textarea {
+  resize: none;
+}
+
 input[type="text"],
 textarea {
   max-width: 95vw;
   width: 500px;
+}
+
+input[type="password"],
+input[type="email"] {
+  width: 300px;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border: 2.5px solid #2f5e86;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   padding: 10px;
   margin: 5px 0 10px 0;
   box-sizing: border-box;
@@ -118,11 +170,11 @@ textarea {
   outline: none;
 }
 
-textarea {
-  resize: none;
+input[type="file"] {
+  margin: 10px 0 10px 0;
 }
 
-input[type="text"]:focus,
-textarea:focus {
-  border: 2.5px solid #2f5e86;
+#first-name,
+#second-name {
+  width: 300px;
 }

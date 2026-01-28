@@ -9,36 +9,61 @@
     <link rel="stylesheet" href="../css/global.css" />
   </head>
   <body>
-    <h2>Edit blog post</h2>
-    <form action="" method="post">
-      <label for="thumbnail"
-        ><img src="../assets/upload.png" />Upload thumbnail</label
-      >
-      <input
-        type="file"
-        id="thumbnail"
-        name="thumbnail"
-        accept="image/*"
-      /><br />
-      <label for="banner"
-        ><img src="../assets/upload.png" />Upload image banner</label
-      >
-      <input type="file" id="banner" name="banner" accept="image/*" /><br />
-      <label for="title">Title</label><br />
-      <input type="text" id="title" name="title" /><br />
-      <label for="ingress">Ingress</label><br />
-      <input type="text" id="ingress" name="ingress" /><br />
-      <label for="body">Body text</label><br />
-      <textarea id="body" name="body" cols="50" rows="10"></textarea><br />
-      <label for="add-image"><img src="../assets/plus.png" /></label>
-      <button id="add-image">Add image</button><br />
-      <label for="add-header"><img src="../assets/plus.png" /></label>
-      <button id="add-header">Add section header</button><br />
-      <label for="add-body"><img src="../assets/plus.png" /></label>
-      <button id="add-body">Add body text</button><br />
-      <button class="primary-button" type="submit">Upload</button>
-    </form>
-    <label for="trash"><img src="../assets/trash.png" /></label>
-    <button class="secondary-button">Delete post</button>
+    <header>
+      <img src="/assets/logo_desktop.png" alt="logo" />
+      <img src="/assets/logo_mobile.png" alt="logo" />
+      <button class="nav-button"></button>
+    </header>
+    <h2 class="center-heading">Edit blog post</h2>
+    <div class="form-container">
+      <form action="" method="post">
+        <fieldset>
+          <label for="thumbnail"
+            ><img src="../assets/upload.png" />Upload thumbnail</label
+          >
+          <input
+            type="file"
+            id="thumbnail"
+            name="thumbnail"
+            accept="image/*"
+          /><br />
+          <label for="banner"
+            ><img src="../assets/upload.png" />Upload image banner</label
+          >
+          <input type="file" id="banner" name="banner" accept="image/*" /><br />
+        </fieldset>
+        <div class="form-group">
+          <label for="title">Title</label><br />
+          <input type="text" id="title" name="title" /><br />
+        </div>
+        <div class="form-group">
+          <label for="ingress">Ingress</label><br />
+          <input type="text" id="ingress" name="ingress" /><br />
+        </div>
+        <div class="form-group">
+          <label for="body">Body text</label><br />
+          <textarea id="body" name="body" cols="50" rows="10"></textarea><br />
+        </div>
+        <div class="form-group">
+          <label for="add-image"><img src="../assets/plus.png" /></label>
+          <button id="add-image">Add image</button><br />
+        </div>
+        <div class="form-group">
+          <label for="add-header"><img src="../assets/plus.png" /></label>
+          <button id="add-header">Add section header</button><br />
+        </div>
+        <div class="form-group">
+          <label for="add-body"><img src="../assets/plus.png" /></label>
+          <button id="add-body">Add body text</button><br />
+        </div>
+        <div class="buttons-container">
+          <label for="trash"><img src="../assets/trash.png" /></label>
+          <button class="secondary-button">Delete post</button>
+          <button class="primary-button" id="upload" type="submit">
+            Upload
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
