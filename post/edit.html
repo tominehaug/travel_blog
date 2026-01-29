@@ -10,8 +10,12 @@
   </head>
   <body>
     <header>
-      <img src="/assets/logo_desktop.png" id="logo-desktop" alt="logo" />
-      <img src="/assets/logo_mobile.png" id="logo-mobile" alt="logo" />
+      <a href="../index.html">
+        <picture>
+          <source srcset="/assets/logo_mobile.png" media="(max-width: 768px)" />
+          <img src="/assets/logo_desktop.png" alt="logo" />
+        </picture>
+      </a>
       <button class="nav-button"></button>
     </header>
     <h2 class="center-heading">Edit blog post</h2>
