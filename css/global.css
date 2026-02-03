@@ -4,6 +4,10 @@ body {
   margin: 10px;
 }
 
+header {
+  padding: 10px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -48,6 +52,10 @@ button {
   font-size: 24px;
   letter-spacing: 0.03em;
   cursor: pointer;
+}
+
+button img {
+  margin-right: 5px;
 }
 
 .primary-button,
@@ -152,6 +160,7 @@ h4 {
 
 a {
   all: unset;
+  cursor: pointer;
 }
 
 /*Styles for forms*/
@@ -164,6 +173,10 @@ fieldset {
 label {
   font-family: "Maitree", serif;
   font-weight: 600;
+}
+
+label img {
+  margin-right: 5px;
 }
 
 textarea {
@@ -204,7 +217,6 @@ input[type="file"] {
   margin: 10px 0 10px 0;
 }
 
-#first-name,
-#second-name {
+#username {
   width: 300px;
 }
