@@ -9,11 +9,14 @@ async function handleLogin(event) {
   const formData = new FormData(event.target);
   const body = {
     email: formData.get("email"),
-    password: formData.get("pwd"),
+    password: formData.get("password"),
   };
+
+  console.log(body);
+
   // HTTP POST request
   try {
-    const response = await fetch("https://api.noroff.dev/v2/auth/login", {
+    const response = await fetch("https://v2.api.noroff.dev/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -28,9 +31,9 @@ async function handleLogin(event) {
       localStorage.setItem("username", user.name);
     }
     saveLogin(data.data);
-    window.location.href = "/index.html";
+    window.location.href = "../index.html";
   } catch (error) {
-    console.error("login failed" + error);
+    console.error("login failed:" + error);
     //document.getElementById("loginMessage").textContent = error.message;
   }
 }
