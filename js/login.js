@@ -6,6 +6,7 @@ loginForm.addEventListener("submit", handleLogin);
 async function handleLogin(event) {
   event.preventDefault();
 
+  // collect login data
   const formData = new FormData(event.target);
   const body = {
     email: formData.get("email"),

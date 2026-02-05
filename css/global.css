@@ -229,4 +229,8 @@ input[type="file"] {
   color: #b90303;
 }
 
+input.invalid {
+  border: 2.5px solid #bb6700;
+}
+
 /* Styles for alerts*/

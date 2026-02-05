@@ -13,9 +13,11 @@ async function validateForm(event) {
 
     if (!input.checkValidity()) {
       errorDiv.textContent = input.validationMessage;
+      input.classList.add("invalid");
       isValid = false;
     } else {
       errorDiv.textContent = "";
+      input.classList.remove("invalid");
     }
   });
 
@@ -37,19 +39,32 @@ async function validateForm(event) {
   }
 }
 
-async function handleRegistration(event) {
-  event.preventDefault();
-
-  const formData = new FormData(event.target);
-
-  let pwd = document.getElementById("password");
-  let rpass = document.getElementById("repeatpass");
-
+async function handleRegistration() {
+  // collect registration data
+  const formData = new FormData(registrationForm);
   const body = {
-    username: formData.get("username"),
+    name: formData.get("username"),
     email: formData.get("email"),
     password: formData.get("password"),
   };
 
   console.log(body);
+  // HTTP POST request
+  try {
+    const response = await fetch("https://v2.api.noroff.dev/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    // API checks request
+    const data = await response.json();
+    if (!response.ok)
+      throw new Error(data.errors?.[0]?.message || "Registration failed");
+    // if successful, alert and redirect
+    alert("Registration was successful!");
+    window.location.href = "../login.html";
+  } catch (error) {
+    console.error("registration failed:" + error);
+    //document.getElementById("registrationMessage").textContent = error.message;
+  }
 }
