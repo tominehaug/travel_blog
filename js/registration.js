@@ -9,7 +9,7 @@ async function validateForm(event) {
   const inputs = Array.from(registrationForm.querySelectorAll("input"));
 
   inputs.forEach((input) => {
-    const errorDiv = document.querySelectorAll(".error");
+    const errorDiv = input.nextElementSibling;
 
     if (!input.checkValidity()) {
       errorDiv.textContent = input.validationMessage;
@@ -24,31 +24,32 @@ async function validateForm(event) {
   const confirmErrorDiv =
     registrationForm.elements.confirmPwd.nextElementSibling;
 
-  if (password === confirm) {
-    isValid = true;
-  } else {
+  if (password !== confirm) {
     confirmErrorDiv.textContent = "Passwords don't match";
+    isValid = false;
+  } else {
+    confirmErrorDiv.textContent = "";
   }
 
   if (isValid) {
     console.log("Validated!<3333");
-    // handleRegistration();
+    handleRegistration();
   }
 }
 
-// async function handleRegistration(event) {
-//   event.preventDefault();
+async function handleRegistration(event) {
+  event.preventDefault();
 
-//   const formData = new FormData(event.target);
+  const formData = new FormData(event.target);
 
-//   let pwd = document.getElementById("password");
-//   let rpass = document.getElementById("repeatpass");
+  let pwd = document.getElementById("password");
+  let rpass = document.getElementById("repeatpass");
 
-//   const body = {
-//     username: formData.get("username"),
-//     email: formData.get("email"),
-//     password: formData.get("password"),
-//   };
+  const body = {
+    username: formData.get("username"),
+    email: formData.get("email"),
+    password: formData.get("password"),
+  };
 
-//   console.log(body);
-// }
+  console.log(body);
+}
