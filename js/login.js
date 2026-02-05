@@ -1,13 +1,35 @@
-let isLoggedIn = false;
-
 const loginForm = document.getElementById("login-form");
-loginForm.addEventListener("submit", handleLogin);
+loginForm.addEventListener("submit", validateForm);
 
-async function handleLogin(event) {
+async function validateForm(event) {
   event.preventDefault();
 
+  let isValid = true;
+
+  const inputs = Array.from(loginForm.querySelectorAll("input"));
+
+  inputs.forEach((input) => {
+    const errorDiv = input.nextElementSibling;
+
+    if (!input.checkValidity()) {
+      errorDiv.textContent = input.validationMessage;
+      input.classList.add("invalid");
+      isValid = false;
+    } else {
+      errorDiv.textContent = "";
+      input.classList.remove("invalid");
+    }
+  });
+
+  if (isValid) {
+    console.log("Validated!<3333");
+    handleLogin();
+  }
+}
+
+async function handleLogin() {
   // collect login data
-  const formData = new FormData(event.target);
+  const formData = new FormData(loginForm);
   const body = {
     email: formData.get("email"),
     password: formData.get("password"),
