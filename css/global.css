@@ -36,7 +36,7 @@ header {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /*Styles for header*/
@@ -47,23 +47,25 @@ button {
   border: none;
   text-decoration: none;
   cursor: pointer;
+}
+
+.primary-button,
+.secondary-button,
+.tertiary-button,
+.mobile-nav-button,
+.delete-btn {
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Sofia Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
 .primary-button,
 .secondary-button,
 .tertiary-button,
-.mobile-nav-button {
-  border-radius: 10px;
-  text-align: center;
-  font-family: "Sofia Sans", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.primary-button,
-.secondary-button,
-.tertiary-button {
+.delete-btn {
   width: 200px;
   height: 70px;
   font-size: 24px;
@@ -114,7 +116,19 @@ button img {
   text-align: left;
 }
 
+.delete-btn {
+  color: #ffffff;
+  background-color: #bb6700;
+}
+
 /*Alerts and popups*/
+#popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #00000080;
+  z-index: 99;
+}
+
 #popup {
   position: fixed;
   inset: 0;
@@ -153,19 +167,23 @@ button img {
 .cancel-button {
   margin-bottom: 0.5em;
   margin-top: 1em;
+  text-transform: uppercase;
+}
+
+.popup p,
+.popup h2,
+.cancel-button {
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 18px;
 }
 
 .cancel-button,
 .popup p {
-  font-family: "Sofia Sans", sans-serif;
-  font-size: 18px;
   font-weight: 400;
   color: #000000;
 }
 
 .popup h2 {
-  font-family: "Sofia Sans", sans-serif;
-  font-size: 18px;
   font-weight: 600;
   color: #86526e;
 }

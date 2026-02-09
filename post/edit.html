@@ -71,5 +71,16 @@
         </div>
       </form>
     </div>
+    <div id="popup-backdrop" class="hidden"></div>
+    <div id="popup" class="hidden" role="dialog" aria-modal="true">
+      <div class="popup warning-popup">
+        <p>Are you sure you want to delete this post?</p>
+        <div>
+          <button class="delete-btn">Yes</button><br />
+          <button id="return-btn" class="cancel-button">No</button>
+        </div>
+      </div>
+    </div>
+    <script src="../js/popup.js"></script>
   </body>
 </html>
