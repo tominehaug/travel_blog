@@ -20,7 +20,7 @@
     </header>
     <h2 class="center-heading">Log in</h2>
     <div class="form-container">
-      <form id="login-form">
+      <form id="login-form" novalidate>
         <label for="email"
           >E-mail<br />
           <input type="email" id="email" name="email" required />
@@ -41,6 +41,14 @@
         </div>
       </form>
     </div>
+    <div id="popup-backdrop" class="hidden"></div>
+    <div id="popup" class="hidden" role="dialog" aria-modal="true">
+      <div class="popup">
+        <p id="popup-message"></p>
+        <div id="popup-buttons"></div>
+      </div>
+    </div>
     <script src="../js/login.js"></script>
+    <script src="../js/popup.js"></script>
   </body>
 </html>
