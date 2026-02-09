@@ -115,8 +115,47 @@ button img {
 }
 
 /*Alerts and popups*/
+#popup {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: 3px solid #86526e;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: fit-content;
+}
+
+.confirm-popup p,
+.warning-popup p {
+  max-width: 200px;
+}
+
+.confirm-popup {
+  border: 3px solid #697d3b;
+}
+
+.warning-popup {
+  border: 3px solid #bb6700;
+}
+
+.cancel-button {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
 .cancel-button,
-.alert-text,
 .popup p {
   font-family: "Sofia Sans", sans-serif;
   font-size: 18px;
