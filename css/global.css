@@ -151,6 +151,11 @@ button img {
   width: fit-content;
 }
 
+#popup-actions {
+  display: flex;
+  flex-direction: column;
+}
+
 .confirm-popup p,
 .warning-popup p {
   max-width: 200px;
