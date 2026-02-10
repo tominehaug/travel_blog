@@ -41,6 +41,13 @@
         </div>
       </form>
     </div>
-    <script src="../js/login.js"></script>
+    <div id="popup-backdrop" class="hidden"></div>
+    <div id="popup" class="hidden" role="dialog" aria-modal="true">
+      <div class="popup">
+        <p id="popup-message"></p>
+        <div id="popup-actions"></div>
+      </div>
+    </div>
+    <script type="module" src="../js/login.js"></script>
   </body>
 </html>

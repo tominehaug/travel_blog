@@ -1,3 +1,5 @@
+import { setPopup, showPopup, hidePopup } from "./popup.js";
+
 const loginForm = document.getElementById("login-form");
 loginForm.addEventListener("submit", validateForm);
 
@@ -56,7 +58,9 @@ async function handleLogin() {
     saveLogin(data.data);
     window.location.href = "../index.html";
   } catch (error) {
-    console.error("login failed:" + error);
-    //document.getElementById("loginMessage").textContent = error.message;
+    setPopup("warning-popup", error.message, [
+      { text: "back", class: "cancel-button", onClick: hidePopup },
+    ]);
+    showPopup();
   }
 }
