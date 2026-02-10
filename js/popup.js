@@ -19,8 +19,12 @@ export function setPopup(type, message, actions = []) {
   messageDiv.innerHTML = "";
   messageDiv.textContent = message;
 
-  popup.classList.remove("warning-popup", "confirm-popup", "error-popup");
-  popup.classList.add(type);
+  popupContainer.classList.remove(
+    "warning-popup",
+    "confirm-popup",
+    "error-popup",
+  );
+  popupContainer.classList.add(type);
 
   actionsDiv.innerHTML = "";
   actions.forEach((action) => {
