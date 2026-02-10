@@ -107,16 +107,7 @@ button img {
   font-size: 20px;
 }
 
-.add-button {
-  font-family: "Maitree", serif;
-  font-weight: 400;
-  font-size: 16px;
-  width: 300px;
-  height: 40px;
-  text-align: left;
-}
-
-.delete-btn {
+.warning-btn {
   color: #ffffff;
   background-color: #bb6700;
 }
@@ -315,18 +306,21 @@ input[type="file"] {
 }
 
 #username,
-.error {
+.error,
+.file-error {
   width: 300px;
 }
 
-.error {
+.error,
+.file-error {
   font-family: "Maitree", serif;
   font-size: 14px;
   font-weight: 400;
   color: #b90303;
 }
 
-input.invalid {
+input.invalid,
+textarea.invalid {
   border: 2.5px solid #bb6700;
 }
 
