@@ -1,3 +1,5 @@
+import { setPopup, showPopup, hidePopup } from "./popup.js";
+
 const registrationForm = document.getElementById("registration-form");
 registrationForm.addEventListener("submit", validateForm);
 
@@ -60,11 +62,26 @@ async function handleRegistration() {
     const data = await response.json();
     if (!response.ok)
       throw new Error(data.errors?.[0]?.message || "Registration failed");
+
     // if successful, alert and redirect
-    alert("Registration was successful!");
-    window.location.href = "../login.html";
+    setPopup("confirm-popup", "You have successfully signed up!", [
+      {
+        text: "Sign in",
+        class: "primary-button",
+        href: "../account/login.html",
+      },
+      { text: "Home", class: "cancel-button", onClick: hidePopup },
+    ]);
+    showPopup();
   } catch (error) {
-    console.error("registration failed:" + error);
-    //document.getElementById("registrationMessage").textContent = error.message;
+    setPopup("warning-popup", error.message, [
+      {
+        text: "Sign in",
+        class: "primary-button",
+        href: "../account/login.html",
+      },
+      { text: "back", class: "cancel-button", onClick: hidePopup },
+    ]);
+    showPopup();
   }
 }
