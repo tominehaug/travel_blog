@@ -75,11 +75,6 @@ async function handleRegistration() {
     showPopup();
   } catch (error) {
     setPopup("warning-popup", error.message, [
-      {
-        text: "Sign in",
-        class: "primary-button",
-        href: "../account/login.html",
-      },
       { text: "back", class: "cancel-button", onClick: hidePopup },
     ]);
     showPopup();
