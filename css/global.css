@@ -116,7 +116,7 @@ button img {
 #popup-backdrop {
   position: fixed;
   inset: 0;
-  background: #00000080;
+  background: #ffffff85;
   z-index: 99;
 }
 
@@ -258,12 +258,13 @@ fieldset {
   margin-bottom: 10px;
 }
 
-label {
+label,
+legend {
   font-family: "Maitree", serif;
   font-weight: 600;
 }
 
-label img {
+legend img {
   margin-right: 5px;
 }
 
