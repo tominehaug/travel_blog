@@ -22,17 +22,25 @@
     <div class="form-container">
       <form id="create-form" novalidate>
         <fieldset>
-          <label for="banner"
-            ><img src="../assets/upload.png" />Upload image banner /
-            thumbnail<br />
+          <legend>
+            <img src="../assets/upload.png" />Upload image banner /
+            thumbnail</legend>
             <input
-              type="file"
-              id="banner"
-              name="banner"
-              accept=".png, .jpeg, .jpg"
+              type="text"
+              id="mediaUrl"
+              name="mediaUrl"
               required
+              placeholder="input url"
             />
-            <div class="file-error"></div>
+            <div class="error"></div>
+            <input
+              type="text"
+              id="mediaAlt"
+              name="mediaAlt"
+              required
+              placeholder="input alt-text"
+            />
+            <div class="error"></div>
           </label>
         </fieldset>
         <div class="form-group">
@@ -70,6 +78,13 @@
         </div>
       </form>
     </div>
-    <script src="../js/create-post.js"></script>
+    <div id="popup-backdrop" class="hidden"></div>
+    <div id="popup" class="hidden" role="dialog" aria-modal="true">
+      <div class="popup">
+        <p id="popup-message"></p>
+        <div id="popup-actions"></div>
+      </div>
+    </div>
+    <script type="module" src="../js/create-post.js"></script>
   </body>
 </html>
