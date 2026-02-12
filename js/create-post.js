@@ -78,7 +78,7 @@ async function uploadPost() {
     if (!response.ok)
       throw new Error(data.errors?.[0]?.message || "Upload failed");
 
-    // if successful: alert
+    // alert: success or not
     setPopup("confirm-popup", "Your post was uploaded to the blog!", [
       {
         text: "Go to post",
