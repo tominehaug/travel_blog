@@ -48,7 +48,7 @@ async function uploadPost() {
   const formData = new FormData(createForm);
   const ingressInput = formData.get("ingress");
   const bodyInput = formData.get("body");
-  const bodyTxt = `<p class="ingress">${ingressInput}</p>${bodyInput}`;
+  const bodyTxt = `<h3 class="ingress">${ingressInput}</h3><p>${bodyInput}</p>`;
 
   const body = {
     title: formData.get("title"),
