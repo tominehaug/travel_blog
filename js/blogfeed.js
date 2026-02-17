@@ -1,3 +1,5 @@
+import { setPopup, showPopup, hidePopup } from "./popup.js";
+
 const username = localStorage.getItem("username");
 const blogOwner = username || "tomine";
 
@@ -6,11 +8,11 @@ let allPosts = [];
 async function fetchPosts() {
   try {
     const response = await fetch(
-      `https://api.noroff.dev/v2/blog/posts/${blogOwner}`,
+      `https://v2.api.noroff.dev/blog/posts/${blogOwner}`,
     );
+    const data = await response.json();
     if (!response.ok)
       throw new Error(data.errors?.[0]?.message || "Failed network response");
-    const data = await response.json();
     return data.data;
   } catch (error) {
     console.error("Something went wrong" + error);
@@ -27,11 +29,12 @@ async function displayPosts(posts) {
 
   posts.forEach((post) => {
     const link = document.createElement("a");
-    link.href = `https://api.noroff.dev/v2/blog/posts/${post.id}`;
+    link.href = `/post/index.html?id=${post.id}`;
 
     const thumbnail = document.createElement("img");
     thumbnail.src = post.media.url;
     thumbnail.alt = post.media.alt;
+    thumbnail.classList.add("thumbnail-media");
 
     const titleDiv = document.createElement("div");
     titleDiv.textContent = post.title;
@@ -42,6 +45,8 @@ async function displayPosts(posts) {
     container.appendChild(link);
   });
 }
+
+console.log(allPosts);
 
 async function init() {
   allPosts = await fetchPosts();
