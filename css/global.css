@@ -1,13 +1,5 @@
 /*Styles for layout*/
 
-body {
-  margin: 10px;
-}
-
-header {
-  padding: 10px;
-}
-
 .form-container {
   display: flex;
   flex-direction: column;
@@ -39,7 +31,58 @@ header {
   display: none !important;
 }
 
+/* Layout for feed */
+
+.thumbnail-media {
+  max-width: 300px;
+}
+
+/* Layout for single post */
+
+#title-wrapper img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+#title-wrapper h1 {
+  position: absolute;
+  top: 150px;
+  background-color: white;
+  padding: 10px 30px;
+}
+
+#byline {
+  margin: 20px 5px;
+}
+
+#byline h4 {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: left;
+}
+
 /*Styles for header*/
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 1.5em;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+}
 
 /*Styles for buttons*/
 
@@ -105,6 +148,12 @@ button img {
   width: 142px;
   height: 55px;
   font-size: 20px;
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 32px;
 }
 
 .warning-btn {
@@ -230,18 +279,7 @@ h3 {
 }
 h4 {
   font-weight: 600;
-}
-
-@media (max-width: 767px) {
-  h3,
-  h4,
-  p,
-  .thumbnail {
-    font-size: 20px;
-  }
-  h1 {
-    font-size: 25px;
-  }
+  text-transform: capitalize;
 }
 
 /*Links*/
@@ -323,4 +361,33 @@ input[type="file"] {
 input.invalid,
 textarea.invalid {
   border: 2.5px solid #bb6700;
+}
+
+@media (max-width: 767px) {
+  /* fonts */
+  h3,
+  p,
+  .thumbnail {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  /* layout */
+  #title-wrapper h1 {
+    position: inherit;
+    text-align: center;
+    padding: 0;
+    font-size: 32px;
+  }
+  #title-wrapper img {
+    height: 250px;
+  }
+  .main {
+    width: 100%;
+    margin: 4px;
+  }
 }
