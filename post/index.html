@@ -16,21 +16,24 @@
           <img src="/assets/logo_desktop.png" alt="logo" />
         </picture>
       </a>
-      <button id="nav-button"></button>
+      <div class="logged-in">
+        <button class="dropdown-btn">
+          <span class="username"></span>
+          <img src="/assets/chevron-down-desktop.png" />
+        </button>
+      </div>
+      <div class="logged-out">
+        <button class="primary-button">
+          <a href="/account/login.html">Sign in</a>
+        </button>
+      </div>
     </header>
-    <img src="" alt="" />
-    <h1></h1>
-    //title
-    <h3></h3>
-    //ingress
-    <h4></h4>
-    // byline
-    <main>
-      <p></p>
-      <img src="" alt="" /> //media
-      <p></p>
+    <div id="title-wrapper"></div>
+    <main class="main">
+      <div id="byline"></div>
+      <div id="body-wrapper"></div>
+      <div><img src="../assets/share.png" alt="share this post" /></div>
     </main>
-    <img src="../assets/share.png" alt="share this post" />
     <div id="popup-backdrop" class="hidden"></div>
     <div id="popup" class="hidden">
       <div class="popup">
@@ -39,5 +42,7 @@
         <button id="return-btn" class="cancel-button">Back</button>
       </div>
     </div>
+    <script type="module" src="../js/single-post.js"></script>
+    <script src="../js/authentication.js"></script>
   </body>
 </html>
