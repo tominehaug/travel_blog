@@ -43,6 +43,7 @@
   width: 100%;
   height: 550px;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
 #title-wrapper h1 {
@@ -63,9 +64,27 @@
 .main {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  width: 50%;
   margin: 0 auto;
   text-align: left;
+}
+
+.main .share {
+  display: block;
+  margin: 40px auto;
+}
+
+.edit {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 5;
+  color: #86526e;
 }
 
 /*Styles for header*/
@@ -379,12 +398,19 @@ textarea.invalid {
   /* layout */
   #title-wrapper h1 {
     position: inherit;
-    text-align: center;
     padding: 0;
+    text-align: center;
     font-size: 32px;
+    margin: 8px 0;
   }
   #title-wrapper img {
     height: 250px;
+  }
+  #byline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .main {
     width: 100%;

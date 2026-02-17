@@ -52,14 +52,15 @@ async function displayPost(post) {
 
   const edit = document.createElement("a");
   edit.href = "../post/edit.html";
-  edit.textContent = "EDIT";
+  const editTxt = document.createElement("span");
+  editTxt.textContent = "EDIT";
+  edit.classList.add("edit");
   const editIcon = document.createElement("img");
   editIcon.src = "../assets/edit_desktop.png";
   edit.appendChild(editIcon);
+  edit.appendChild(editTxt);
   if (authUser === username) {
     byline.appendChild(edit);
-  } else {
-    byline.removeChild(edit);
   }
 }
 
