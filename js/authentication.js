@@ -1,8 +1,8 @@
 const isLoggedIn = Boolean(localStorage.getItem("token"));
 
-// Nav-bar
+// HEADER
 
-async function authNav() {
+async function authHeader() {
   const loggedOutBtn = document.querySelector(".logged-out");
   const loggedInBtn = document.querySelector(".logged-in");
   const username = localStorage.getItem("username");
@@ -18,4 +18,30 @@ async function authNav() {
   }
 }
 
-authNav();
+authHeader();
+
+async function openNav() {
+  const button = document.querySelector(".dropdown-btn");
+  const nav = document.querySelector("nav");
+
+  button.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+}
+
+openNav();
+
+// Sign out
+
+const signOutBtn = document.getElementById("sign-out");
+
+function removeLogin() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("username");
+}
+
+signOutBtn.addEventListener("click", () => {
+  removeLogin();
+  console.log(localStorage);
+  window.location.href = "index.html";
+});
