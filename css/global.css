@@ -34,7 +34,16 @@
   display: none !important;
 }
 
+/* Layout for carousel */
+
 /* Layout for feed */
+
+.presentation {
+  display: block;
+  max-width: 700px;
+  text-align: center;
+  margin: auto auto;
+}
 
 #posts-container {
   display: flex;
@@ -292,6 +301,7 @@ button img {
 
 .decorative-title {
   font-family: "Londrina Solid", sans-serif;
+  font-size: 48px;
   letter-spacing: 0.2em;
   color: #697d3b;
   text-transform: uppercase;
