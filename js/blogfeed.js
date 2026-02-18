@@ -36,7 +36,7 @@ async function displayPosts(posts) {
     thumbnail.alt = post.media.alt;
     thumbnail.classList.add("thumbnail-media");
 
-    const titleDiv = document.createElement("div");
+    const titleDiv = document.createElement("h3");
     titleDiv.textContent = post.title;
     titleDiv.classList.add("thumbnail");
 
