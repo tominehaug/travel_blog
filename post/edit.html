@@ -50,7 +50,7 @@
       <div class="logged-in">
         <button class="dropdown-btn">
           <span class="username"></span>
-          <img src="/assets/chevron-down-desktop.png" />
+          <i class="fa-solid fa-chevron-down"></i>
         </button>
         <nav>
           <ul>
@@ -84,17 +84,17 @@
     <div class="form-container">
       <form id="edit-form" novalidate>
         <fieldset>
-          <label for="banner"
-            ><img src="../assets/upload.png" />Upload image banner /
-            thumbnail<br />
+          <legend>
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>Upload image banner /
+            thumbnail</legend>
             <input
-              type="file"
-              id="banner"
-              name="banner"
-              accept=".png, .jpeg, .jpg"
+              type="text"
+              id="mediaUrl"
+              name="mediaUrl"
               required
+              placeholder="input url"
             />
-            <div class="file-error"></div>
+            <div class="error"></div>
           </label>
         </fieldset>
         <div class="form-group">
@@ -125,8 +125,9 @@
           </label>
         </div>
         <div class="b-buttons-container">
-          <button class="secondary-button">
-            <img src="../assets/trash.png" />Delete post
+          <button class="secondary-button trash-can">
+            <i class="fa-regular fa-trash-can"></i>
+            <span>Delete post</span>
           </button>
           <button class="primary-button" id="upload" type="submit">
             Upload

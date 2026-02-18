@@ -43,5 +43,5 @@ function removeLogin() {
 signOutBtn.addEventListener("click", () => {
   removeLogin();
   console.log(localStorage);
-  window.location.href = "index.html";
+  window.location.reload();
 });

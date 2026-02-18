@@ -98,15 +98,27 @@
 }
 
 .edit {
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 7px;
   font-family: "Sofia Sans", sans-serif;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: 5;
+  color: #86526e;
+}
+
+/* icon styles */
+
+.share .fa-solid {
+  font-size: 35px;
+  color: #86526e;
+}
+
+legend i {
+  margin-right: 5px;
   color: #86526e;
 }
 
@@ -133,6 +145,7 @@ nav {
 .dropdown-btn {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .logged-in ul {
@@ -217,7 +230,7 @@ button img {
 .dropdown-btn {
   background-color: transparent;
   font-family: "Sofia Sans", sans-serif;
-  font-size: 32px;
+  font-size: 26px;
 }
 
 .warning-btn {
@@ -365,10 +378,6 @@ label,
 legend {
   font-family: "Maitree", serif;
   font-weight: 600;
-}
-
-legend img {
-  margin-right: 5px;
 }
 
 textarea {
