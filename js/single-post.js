@@ -30,6 +30,9 @@ async function displayPost(post) {
   const bodyWrapper = document.getElementById("body-wrapper");
   bodyWrapper.innerHTML = `${post.body}`;
 
+  const headTitle = document.querySelector("title");
+  headTitle.textContent = `${post.title}`;
+
   const banner = document.createElement("img");
   banner.src = post.media.url;
   banner.alt = post.media.alt;
@@ -58,7 +61,9 @@ async function displayPost(post) {
 
 async function init() {
   const post = await fetchPost();
-  if (post) displayPost(post);
+  if (post) {
+    displayPost(post);
+  }
 }
 
 init();
