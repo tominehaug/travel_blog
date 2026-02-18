@@ -50,7 +50,7 @@ async function handleLogin() {
     const data = await response.json();
     if (!response.ok)
       throw new Error(data.errors?.[0]?.message || "Login failed");
-
+    // Save login information
     function saveLogin(user) {
       localStorage.setItem("token", user.accessToken);
       localStorage.setItem("username", user.name);
