@@ -54,6 +54,7 @@ async function displayPost(post) {
   const authUser = post.author.name;
 
   const editAccess = document.getElementById("edit-access");
+  editAccess.querySelector("a").href = `/post/edit.html?id=${post.id}`;
   if (!(authUser === username)) {
     editAccess.classList.add("hidden");
   }
