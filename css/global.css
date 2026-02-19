@@ -115,6 +115,7 @@
 .share .fa-solid {
   font-size: 35px;
   color: #86526e;
+  cursor: pointer;
 }
 
 legend i {

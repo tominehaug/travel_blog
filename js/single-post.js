@@ -67,3 +67,32 @@ async function init() {
 }
 
 init();
+
+const shareBtn = document.querySelector(".share");
+
+shareBtn.addEventListener("click", () => {
+  const popupDiv = document.querySelector(".popup");
+  const popupBackdrop = document.getElementById("popup-backdrop");
+  const popupContainer = document.getElementById("popup");
+
+  popupDiv.innerHTML = "";
+  const sharePrompt = document.createElement("h2");
+  sharePrompt.textContent = "Share this post!";
+  const shareLink = document.createElement("p");
+  shareLink.textContent =
+    "www.heregoeslink.com/and-it-is-very-long-just-to-check-the-styling";
+  const cancelBtn = document.createElement("button");
+  cancelBtn.textContent = "Cancel";
+  cancelBtn.classList.add("cancel-button");
+  popupDiv.appendChild(sharePrompt);
+  popupDiv.appendChild(shareLink);
+  popupDiv.appendChild(cancelBtn);
+
+  popupContainer.classList.remove("hidden");
+  popupBackdrop.classList.remove("hidden");
+
+  cancelBtn.addEventListener("click", () => {
+    popupContainer.classList.add("hidden");
+    popupBackdrop.classList.add("hidden");
+  });
+});

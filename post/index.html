@@ -96,11 +96,10 @@
       </div>
     </main>
     <div id="popup-backdrop" class="hidden"></div>
-    <div id="popup" class="hidden">
+    <div id="popup" class="hidden" role="dialog" aria-modal="true">
       <div class="popup">
-        <h2>Share this post!</h2>
-        <p>link goes here</p>
-        <button id="return-btn" class="cancel-button">Back</button>
+        <p id="popup-message"></p>
+        <div id="popup-actions"></div>
       </div>
     </div>
     <script type="module" src="../js/single-post.js"></script>
