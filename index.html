@@ -50,6 +50,7 @@
         </button>
       </div>
     </header>
+    <main>
     <h2 class="center-heading">Explore the world at a slower pace.</h2>
     <div class="presentation">
       <p>
@@ -62,6 +63,14 @@
     <h1 class="decorative-title">explore</h1>
     <section id="posts-container"></section>
     </section>
+    </main>
+    <div id="popup-backdrop" class="hidden"></div>
+    <div id="popup" class="hidden" role="dialog" aria-modal="true">
+      <div class="popup">
+        <p id="popup-message"></p>
+        <div id="popup-actions"></div>
+      </div>
+    </div>
     <script type="module" src="js/blogfeed.js"></script>
     <script src="js/authentication.js"></script>
   </body>
