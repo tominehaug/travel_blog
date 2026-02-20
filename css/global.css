@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0 20px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -49,15 +53,27 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 50px;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+#explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .thumbnail-media {
-  max-width: 300px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .thumbnail {
   margin: 0;
+  max-width: 300px;
 }
 
 /* Layout for single post */
@@ -133,6 +149,7 @@ header {
   justify-content: space-between;
   padding: 10px;
   padding-bottom: 1.5em;
+  margin: 0;
 }
 
 nav {
@@ -172,9 +189,9 @@ button {
 
 .primary-button,
 .secondary-button,
-.tertiary-button,
 .mobile-nav-button,
-.delete-btn {
+.delete-btn,
+.warning-btn {
   border-radius: 10px;
   text-align: center;
   font-family: "Sofia Sans", sans-serif;
@@ -185,8 +202,8 @@ button {
 
 .primary-button,
 .secondary-button,
-.tertiary-button,
-.delete-btn {
+.delete-btn,
+.warning-btn {
   width: 200px;
   height: 70px;
   font-size: 24px;
@@ -215,11 +232,6 @@ button img {
 .secondary-button:hover,
 .cancel-button:hover {
   text-decoration: underline;
-}
-
-.tertiary-button {
-  background-color: #2f5e86;
-  color: #ffffff;
 }
 
 .mobile-nav-button {
@@ -481,5 +493,13 @@ textarea.invalid {
     left: 0;
     width: 100%;
     align-items: center;
+  }
+  .thumbnail-media {
+    width: 90vw;
+    height: 260px;
+  }
+
+  .thumbnail {
+    max-width: 90vw;
   }
 }
