@@ -3,45 +3,16 @@ const username = localStorage.getItem("username");
 const token = localStorage.getItem("token");
 
 const createForm = document.getElementById("create-form");
-createForm.addEventListener("submit", validateForm);
 
-async function validateForm(event) {
-  event.preventDefault();
+import { validateForm } from "./validation.js";
 
-  let isValid = true;
-  const inputs = Array.from(createForm.querySelectorAll("input, textarea"));
-
-  inputs.forEach((input) => {
-    const errorDiv = input.nextElementSibling;
-
-    //validate file input
-    if (input.type === "file") {
-      if (!input.files || input.files.length === 0) {
-        errorDiv.textContent = "Please fill out this field";
-        isValid = false;
-      } else {
-        errorDiv.textContent = "";
-      }
-      return;
-    }
-
-    //validate other input
-
-    if (!input.checkValidity()) {
-      errorDiv.textContent = input.validationMessage;
-      input.classList.add("invalid");
-      isValid = false;
-    } else {
-      errorDiv.textContent = "";
-      input.classList.remove("invalid");
-    }
-  });
+createForm.addEventListener("submit", (event) => {
+  const isValid = validateForm(event, createForm);
 
   if (isValid) {
-    console.log("Validated!<3333");
     uploadPost();
   }
-}
+});
 
 async function uploadPost() {
   //Collect blog post data
@@ -79,13 +50,15 @@ async function uploadPost() {
       throw new Error(data.errors?.[0]?.message || "Upload failed");
 
     // alert: success or not
+    const newPostId = data.data.id;
+
     setPopup("confirm-popup", "Your post was uploaded to the blog!", [
       {
         text: "Go to post",
         class: "primary-button",
-        href: "../account/login.html",
+        href: `/post/index.html?id=${newPostId}`,
       },
-      { text: "Home", class: "cancel-button", href: "./" },
+      { text: "Home", class: "cancel-button", href: "../" },
     ]);
     showPopup();
   } catch (error) {
