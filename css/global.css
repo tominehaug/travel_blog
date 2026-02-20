@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-body {
+main {
   margin: 0 20px;
 }
 
@@ -148,8 +148,13 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  padding-bottom: 1.5em;
-  margin: 0;
+  background-color: #ffffff;
+  height: 120px;
+}
+
+header img {
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 nav {
@@ -164,6 +169,8 @@ nav {
   display: flex;
   align-items: center;
   gap: 5px;
+  padding-bottom: 25px;
+  padding-top: 25px;
 }
 
 .logged-in ul {
@@ -173,7 +180,10 @@ nav {
   flex-direction: column;
   gap: 10px;
   background-color: #ffffff;
-  padding: 10px 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 50px;
+  padding-bottom: 20px;
   right: 0;
   z-index: 100;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -488,8 +498,7 @@ textarea.invalid {
     width: 100%;
     margin: 4px;
   }
-  nav ul {
-    top: 100%;
+  .logged-in ul {
     left: 0;
     width: 100%;
     align-items: center;
