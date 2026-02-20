@@ -104,13 +104,13 @@ async function updatePost() {
       throw new Error(data.errors?.[0]?.message || "Upload failed");
 
     // alert: success or not
-    setPopup("confirm-popup", "Your post was uploaded to the blog!", [
+    setPopup("confirm-popup", "Your post was updated!", [
       {
         text: "View post",
         class: "primary-button",
         href: `/post/index.html?id=${postId}`,
       },
-      { text: "Home", class: "cancel-button", href: "./" },
+      { text: "Home", class: "cancel-button", href: "../" },
     ]);
     showPopup();
   } catch (error) {
@@ -131,7 +131,7 @@ deleteBtn.addEventListener("click", () => {
     {
       text: "Yes",
       class: "warning-btn",
-      onclick: deletePost,
+      onClick: deletePost,
     },
     { text: "No", class: "cancel-button", onClick: hidePopup },
   ]);
@@ -148,7 +148,12 @@ async function deletePost() {
     };
     const response = await fetch(deleteUrl, deleteOptions);
 
-    const data = await response.json();
+    let data = null;
+    const text = await response.text();
+    if (text) {
+      data = JSON.parse(text);
+    }
+
     if (!response.ok)
       throw new Error(data.errors?.[0]?.message || "Failed network response");
 
@@ -156,10 +161,10 @@ async function deletePost() {
     setPopup("confirm-popup", "Your post was deleted from the blog.", [
       {
         text: "New post",
-        class: "tertiary-button",
+        class: "primary-button",
         href: "../post/create.html",
       },
-      { text: "Home", class: "cancel-button", href: "./" },
+      { text: "Home", class: "cancel-button", href: "../" },
     ]);
     showPopup();
   } catch (error) {
