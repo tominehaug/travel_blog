@@ -322,7 +322,12 @@ button img {
 }
 
 .thumbnail {
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ingress {
+  font-size: 22px;
 }
 
 h1,
@@ -339,13 +344,12 @@ p,
 }
 h3,
 p,
-.thumbnail,
 .decorative-title {
   font-weight: 400;
 }
 h4,
 p {
-  font-size: 20px;
+  font-size: 18px;
 }
 h1 {
   font-size: 64px;
@@ -354,7 +358,7 @@ h2 {
   font-size: 32px;
 }
 h3 {
-  font-size: 28px;
+  font-size: 22px;
 }
 h4 {
   font-weight: 600;
