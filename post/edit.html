@@ -85,16 +85,14 @@
       <form id="edit-form" novalidate>
         <fieldset>
           <legend>
-            <i class="fa-solid fa-arrow-up-from-bracket"></i>Upload image banner /
-            thumbnail</legend>
-            <input
-              type="text"
-              id="mediaUrl"
-              name="mediaUrl"
-              required
-            />
-            <div class="error"></div>
-          </label>
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>Upload image banner
+            / thumbnail
+          </legend>
+          <input type="text" id="mediaUrl" name="mediaUrl" required />
+          <div class="error"></div>
+          <div class="error"></div>
+          <input type="text" id="mediaAlt" name="mediaAlt" required />
+          <div class="error"></div>
         </fieldset>
         <div class="form-group">
           <label for="title"
@@ -124,11 +122,15 @@
           </label>
         </div>
         <div class="b-buttons-container">
-          <button id="delete-btn" class="secondary-button trash-can">
+          <button
+            id="delete-btn"
+            class="secondary-button trash-can"
+            type="button"
+          >
             <i class="fa-regular fa-trash-can"></i>
             <span>Delete post</span>
           </button>
-          <button class="primary-button" id="upload" type="submit">
+          <button class="primary-button" id="submit-btn" type="submit">
             Upload
           </button>
         </div>
@@ -136,12 +138,9 @@
     </div>
     <div id="popup-backdrop" class="hidden"></div>
     <div id="popup" class="hidden" role="dialog" aria-modal="true">
-      <div class="popup warning-popup">
-        <p>Are you sure you want to delete this post?</p>
-        <div>
-          <button class="delete-btn">Yes</button><br />
-          <button id="return-btn" class="cancel-button">No</button>
-        </div>
+      <div class="popup">
+        <p id="popup-message"></p>
+        <div id="popup-actions"></div>
       </div>
     </div>
     <script type="module" src="../js/edit-post.js"></script>
