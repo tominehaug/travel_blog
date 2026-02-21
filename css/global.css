@@ -40,6 +40,81 @@ main {
 
 /* Layout for carousel */
 
+#carousel {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 50px 50px 50px;
+}
+
+#carousel .fa-solid {
+  color: #86526e;
+  font-size: 40px;
+}
+
+#slides-container {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+#slides-container a {
+  position: relative;
+  min-width: 100%;
+}
+
+.slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slide-title {
+  display: block;
+  padding-top: 10px;
+  background-color: #ffffff;
+  color: #2f5e86;
+  font-family: "Sofia Sans", serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 45%;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+}
+
+.slide-nav {
+  position: absolute;
+  padding-top: 5px;
+  left: 46%;
+}
+
+.dot {
+  display: inline-block;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.selected {
+  background-color: #7b7a7a;
+}
+
 /* Layout for feed */
 
 .presentation {
@@ -69,6 +144,7 @@ main {
   height: 200px;
   object-fit: cover;
   margin-bottom: 10px;
+  border-radius: 7px;
 }
 
 .thumbnail {
@@ -353,15 +429,15 @@ button img {
 }
 
 h1,
-h2 {
+h2,
+.thumbnail {
   font-family: "Sofia Sans", sans-serif;
   font-weight: 700;
   color: #2f5e86;
 }
 h3,
 h4,
-p,
-.thumbnail {
+p {
   font-family: "Maitree", serif;
 }
 h3,

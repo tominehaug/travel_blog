@@ -36,23 +36,47 @@ async function displayPosts(posts) {
     thumbnail.alt = post.media.alt;
     thumbnail.classList.add("thumbnail-media");
 
-    const titleDiv = document.createElement("h3");
-    titleDiv.textContent = post.title;
-    titleDiv.classList.add("thumbnail");
+    const title = document.createElement("h3");
+    title.textContent = post.title;
+    title.classList.add("thumbnail");
 
     link.appendChild(thumbnail);
-    link.appendChild(titleDiv);
+    link.appendChild(title);
     container.appendChild(link);
   });
 }
 
-console.log(allPosts);
+async function displayCarousel(highlights) {
+  const slidesWrapper = document.getElementById("slides-container");
+
+  highlights.forEach((highlight) => {
+    const link = document.createElement("a");
+    link.href = `/post/index.html?id=${highlight.id}`;
+
+    const slideImg = document.createElement("img");
+    slideImg.src = highlight.media.url;
+    slideImg.alt = highlight.media.alt;
+    slideImg.classList.add("slide");
+
+    const titleDiv = document.createElement("div");
+    titleDiv.textContent = highlight.title;
+    titleDiv.classList.add("slide-title");
+
+    link.appendChild(slideImg);
+    link.appendChild(titleDiv);
+    slidesWrapper.appendChild(link);
+  });
+}
 
 async function init() {
   allPosts = await fetchPosts();
   if (!allPosts) return;
 
-  displayPosts(allPosts);
+  const highlights = allPosts.slice(0, 3);
+  const restHighlights = allPosts.slice(3, 15);
+
+  displayPosts(restHighlights);
+  displayCarousel(highlights);
 }
 
 init();

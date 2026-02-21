@@ -4,12 +4,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ROOT & ROAM</title>
     <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-	  <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/android-chrome-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
     <!-- icons -->
-    <script src="https://kit.fontawesome.com/4b71fec88a.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/4b71fec88a.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- fonts -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Maitree:wght@400;600;700&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
@@ -51,18 +74,29 @@
       </div>
     </header>
     <main>
-    <h2 class="center-heading">Explore the world at a slower pace.</h2>
-    <div class="presentation">
-      <p>
-        This blog reimagines the bucket list as a practice of intention, not
-        accumulation. One place holds many experiences, if you pause long enough
-        to notice. See the world, but move slower, with attention and care.
+      <h2 class="center-heading">Explore the world at a slower pace.</h2>
+      <div class="presentation">
+        <p>
+          This blog reimagines the bucket list as a practice of intention, not
+          accumulation. One place holds many experiences, if you pause long
+          enough to notice. See the world, but move slower, with attention and
+          care.
+        </p>
       </div>
-    </aside>
-    <section id="explore">
-    <h1 class="decorative-title">explore</h1>
-    <section id="posts-container"></section>
-    </section>
+      <section id="carousel">
+        <a class="prev"><i class="fa-solid fa-chevron-left"></i></a>
+        <div id="slides-container"></div>
+        <a class="next"><i class="fa-solid fa-chevron-right"></i></a>
+        <div class="slide-nav">
+          <span class="dot"></span>
+          <span class="dot selected"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+      <div id="explore">
+        <h1 class="decorative-title">explore</h1>
+        <section id="posts-container"></section>
+      </div>
     </main>
     <div id="popup-backdrop" class="hidden"></div>
     <div id="popup" class="hidden" role="dialog" aria-modal="true">
