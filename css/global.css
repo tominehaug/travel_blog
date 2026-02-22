@@ -49,18 +49,18 @@ main {
 
 #carousel .fa-solid {
   color: #86526e;
-  font-size: 40px;
+  font-size: 2em;
 }
 
 #slides-container {
   display: flex;
-  transition: transform 0.4s ease-in-out;
   overflow: hidden;
 }
 
-#slides-container a {
+.link-wrap {
   position: relative;
   min-width: 100%;
+  display: none;
 }
 
 .slide {
@@ -84,7 +84,8 @@ main {
 .prev,
 .next {
   position: absolute;
-  top: 45%;
+  top: 42%;
+  transform: translateY(-50%);
 }
 
 .prev {
@@ -98,7 +99,7 @@ main {
 
 .slide-nav {
   position: absolute;
-  padding-top: 5px;
+  padding-top: 10px;
   left: 46%;
 }
 
@@ -122,6 +123,7 @@ main {
   max-width: 700px;
   text-align: center;
   margin: auto auto;
+  margin-bottom: 25px;
 }
 
 #posts-container {
@@ -586,5 +588,19 @@ textarea.invalid {
 
   .thumbnail {
     max-width: 90vw;
+    font-size: 25px;
+  }
+  #carousel {
+    width: 100%;
+    padding: 20px 30px;
+  }
+  .slide-title {
+    padding-top: 5px;
+    font-size: 25px;
+  }
+  .dot {
+    padding-top: 5px;
+    height: 10px;
+    width: 10px;
   }
 }

@@ -23,6 +23,8 @@ async function fetchPosts() {
   }
 }
 
+// grid feed
+
 async function displayPosts(posts) {
   const container = document.getElementById("posts-container");
   container.innerHTML = "";
@@ -46,12 +48,15 @@ async function displayPosts(posts) {
   });
 }
 
+// carousel
+
 async function displayCarousel(highlights) {
   const slidesWrapper = document.getElementById("slides-container");
 
   highlights.forEach((highlight) => {
     const link = document.createElement("a");
     link.href = `/post/index.html?id=${highlight.id}`;
+    link.classList.add("link-wrap");
 
     const slideImg = document.createElement("img");
     slideImg.src = highlight.media.url;
@@ -66,6 +71,52 @@ async function displayCarousel(highlights) {
     link.appendChild(titleDiv);
     slidesWrapper.appendChild(link);
   });
+
+  handleSlides(slideIndex);
+}
+
+let slideIndex = 1;
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+document.querySelector(".prev").addEventListener("click", () => {
+  plusSlides(-1);
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  plusSlides(1);
+});
+
+document.querySelectorAll(".dot").forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentSlide(index + 1);
+  });
+});
+
+function handleSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("link-wrap");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" selected", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " selected";
 }
 
 async function init() {
