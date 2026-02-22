@@ -1,5 +1,9 @@
 import { setPopup, showPopup, hidePopup } from "./popup.js";
 
+const basePath = window.location.hostname.includes("github.io")
+  ? "/travel_blog"
+  : "";
+
 const params = new URLSearchParams(window.location.search);
 const postId = params.get("id");
 const username = localStorage.getItem("username");
@@ -54,7 +58,8 @@ async function displayPost(post) {
   const authUser = post.author.name;
 
   const editAccess = document.getElementById("edit-access");
-  editAccess.querySelector("a").href = `/post/edit.html?id=${post.id}`;
+  editAccess.querySelector("a").href =
+    `${basePath}/post/edit.html?id=${post.id}`;
   if (!(authUser === username)) {
     editAccess.classList.add("hidden");
   }
@@ -80,7 +85,7 @@ shareBtn.addEventListener("click", () => {
   const sharePrompt = document.createElement("h2");
   sharePrompt.textContent = "Share this post!";
   const shareLink = document.createElement("p");
-  shareLink.textContent = `https://tominehaug.github.io/post/index.html?id=${postId}`;
+  shareLink.textContent = `${basePath}/post/index.html?id=${postId}`;
   const cancelBtn = document.createElement("button");
   cancelBtn.textContent = "Cancel";
   cancelBtn.classList.add("cancel-button");

@@ -1,5 +1,9 @@
 import { setPopup, showPopup, hidePopup } from "./popup.js";
 
+const basePath = window.location.hostname.includes("github.io")
+  ? "/travel_blog"
+  : "";
+
 const username = localStorage.getItem("username");
 const blogOwner = username || "tomine";
 
@@ -31,7 +35,7 @@ async function displayPosts(posts) {
 
   posts.forEach((post) => {
     const link = document.createElement("a");
-    link.href = `${blogOwner}/post/index.html?id=${post.id}`;
+    link.href = `${basePath}/post/index.html?id=${post.id}`;
 
     const thumbnail = document.createElement("img");
     thumbnail.src = post.media.url;
