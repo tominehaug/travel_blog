@@ -43,7 +43,7 @@ main {
 #carousel {
   position: relative;
   width: 70%;
-  margin: 0 auto;
+  margin: 45px auto 10px auto;
   padding: 0 50px 50px 50px;
 }
 
@@ -124,6 +124,10 @@ main {
   text-align: center;
   margin: auto auto;
   margin-bottom: 25px;
+}
+
+.presentation p {
+  font-size: 20px;
 }
 
 #posts-container {
@@ -545,11 +549,11 @@ textarea.invalid {
 @media (max-width: 767px) {
   /* fonts */
   h3,
-  p,
-  .thumbnail {
+  p {
     font-size: 20px;
   }
-  h1 {
+  h1,
+  .thumbnail {
     font-size: 28px;
   }
   h4 {
@@ -588,7 +592,6 @@ textarea.invalid {
 
   .thumbnail {
     max-width: 90vw;
-    font-size: 25px;
   }
   #carousel {
     width: 100%;
@@ -596,7 +599,7 @@ textarea.invalid {
   }
   .slide-title {
     padding-top: 5px;
-    font-size: 25px;
+    font-size: 28px;
   }
   .dot {
     padding-top: 5px;
