@@ -31,7 +31,7 @@ async function displayPosts(posts) {
 
   posts.forEach((post) => {
     const link = document.createElement("a");
-    link.href = `/post/index.html?id=${post.id}`;
+    link.href = `${blogOwner}/post/index.html?id=${post.id}`;
 
     const thumbnail = document.createElement("img");
     thumbnail.src = post.media.url;
