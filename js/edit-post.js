@@ -1,5 +1,9 @@
 import { setPopup, showPopup, hidePopup } from "./popup.js";
 
+const basePath = window.location.hostname.includes("github.io")
+  ? "/travel_blog"
+  : "";
+
 const params = new URLSearchParams(window.location.search);
 const postId = params.get("id");
 const username = localStorage.getItem("username");
@@ -88,7 +92,7 @@ async function updatePost() {
     },
   };
   console.log(updatedBody);
-  //HTTP Post request
+  //HTTP PUT request
   try {
     const response = await fetch(updateUrl, {
       method: "PUT",
@@ -108,7 +112,7 @@ async function updatePost() {
       {
         text: "View post",
         class: "primary-button",
-        href: `/post/index.html?id=${postId}`,
+        href: `${basePath}/post/index.html?id=${postId}`,
       },
       { text: "Home", class: "cancel-button", href: "../" },
     ]);
@@ -162,7 +166,7 @@ async function deletePost() {
       {
         text: "New post",
         class: "primary-button",
-        href: "../post/create.html",
+        href: `${basePath}/post/create.html`,
       },
       { text: "Home", class: "cancel-button", href: "../" },
     ]);

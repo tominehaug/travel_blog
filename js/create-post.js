@@ -1,4 +1,9 @@
 import { setPopup, showPopup, hidePopup } from "./popup.js";
+
+const basePath = window.location.hostname.includes("github.io")
+  ? "/travel_blog"
+  : "";
+
 const username = localStorage.getItem("username");
 const token = localStorage.getItem("token");
 
@@ -56,7 +61,7 @@ async function uploadPost() {
       {
         text: "Go to post",
         class: "primary-button",
-        href: `/post/index.html?id=${newPostId}`,
+        href: `${basePath}/post/index.html?id=${newPostId}`,
       },
       { text: "Home", class: "cancel-button", href: "../" },
     ]);
