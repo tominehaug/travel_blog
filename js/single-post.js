@@ -85,7 +85,7 @@ shareBtn.addEventListener("click", () => {
   const sharePrompt = document.createElement("h2");
   sharePrompt.textContent = "Share this post!";
   const shareLink = document.createElement("p");
-  shareLink.textContent = `${basePath}/post/index.html?id=${postId}`;
+  shareLink.textContent = `https://tominehaug.github.io/${basePath}/post/index.html?id=${postId}`;
   const cancelBtn = document.createElement("button");
   cancelBtn.textContent = "Cancel";
   cancelBtn.classList.add("cancel-button");

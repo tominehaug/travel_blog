@@ -59,7 +59,7 @@ async function displayCarousel(highlights) {
 
   highlights.forEach((highlight) => {
     const link = document.createElement("a");
-    link.href = `/post/index.html?id=${highlight.id}`;
+    link.href = `${basePath}/post/index.html?id=${highlight.id}`;
     link.classList.add("link-wrap");
 
     const slideImg = document.createElement("img");
