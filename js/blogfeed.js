@@ -78,11 +78,11 @@ async function displayCarousel(highlights) {
 let slideIndex = 1;
 
 function plusSlides(n) {
-  showSlides((slideIndex += n));
+  handleSlides((slideIndex += n));
 }
 
 function currentSlide(n) {
-  showSlides((slideIndex = n));
+  handleSlides((slideIndex = n));
 }
 
 document.querySelector(".prev").addEventListener("click", () => {
